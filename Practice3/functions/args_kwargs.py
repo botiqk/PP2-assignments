@@ -1,44 +1,35 @@
 #1 example
 
-def my_function(*kids):
-  print("The youngest child is " + kids[2])
+def sum(*args):
+    total = 0
+    for num in args:
+        total += num
+    return total
 
-my_function("Emil", "Tobias", "Linus")
+print(sum(1, 2, 3))      
+print(sum(5, 10, 15, 2)) 
 
 #2 example
 
-def my_function(*numbers):
-  total = 0
-  for num in numbers:
-    total += num
-  return total
+def show(*args):
+    for item in args:
+        print(item)
 
-print(my_function(1, 2, 3))
-print(my_function(10, 20, 30, 40))
-print(my_function(5))
+show("apple", "banana", "cherry")
 
 #3 example
 
-def my_function(**kid):
-  print("His last name is " + kid["lname"])
+def user_info(**kwargs):
+    for key, value in kwargs.items():
+        print(key, ":", value)
 
-my_function(fname = "Tobias", lname = "Refsnes")
+user_info(name="Alex", age=18, city="Almaty")
 
 #4 example
 
-def my_function(**myvar):
-  print("Type:", type(myvar))
-  print("Name:", myvar["name"])
-  print("Age:", myvar["age"])
-  print("All data:", myvar)
+def example(*args, **kwargs):
+    print("args:", args)
+    print("kwargs:", kwargs)
 
-my_function(name = "Tobias", age = 30, city = "Bergen")
+example(1, 2, 3, a=10, b=20)
 
-#5 example
-
-def my_function(title, *args, **kwargs):
-  print("Title:", title)
-  print("Positional arguments:", args)
-  print("Keyword arguments:", kwargs)
-
-my_function("User Info", "Emil", "Tobias", age = 25, city = "Oslo")

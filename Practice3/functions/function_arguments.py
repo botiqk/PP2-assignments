@@ -1,40 +1,28 @@
 #1 example
 
-def my_function(fname):
-  print(fname + " Refsnes")
-
-my_function("Emil")
-my_function("Tobias")
-my_function("Linus")
+def greetings(name): # name is a parameter
+    print(f"Hello, {name}!")
+greetings("Kuralai") # 'Pasha' is an argument
 
 #2 example
 
-def my_function(name): # name is a parameter
-  print("Hello", name)
-
-my_function("Emil") # "Emil" is an argument
+def standart(nam = "Ulpan"):
+    print(f"My name is {nam}")
+standart("Arlan")
+standart("Anel")
+standart()
 
 #3 example
 
-def my_function(fname, lname):
-  print(fname + " " + lname)
-
-my_function("Emil", "Refsnes")
+def vegetables(veg):
+    for i in veg:
+        print(i)
+bag = ["tomato", "cucumber", "broccolli"]
+vegetables(bag)
 
 #4 example
 
-def my_function(name = "friend"):
-  print("Hello", name)
-
-my_function("Emil")
-my_function("Tobias")
-my_function()
-my_function("Linus")
-
-#5 example
-
-def my_function(animal, name):
-  print("I have a", animal)
-  print("My", animal + "'s name is", name)
-
-my_function("dog", "Buddy")
+def func(bird, people):
+    print(f"I have {bird}")
+    print(f"This is my friend {people}")
+func(people = "Azamat", bird = "cacadoo")

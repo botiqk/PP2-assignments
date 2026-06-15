@@ -1,34 +1,30 @@
 #1 example
-
-def my_function(x, y):
-  return x + y
-
-result = my_function(5, 3)
-print(result)
+def f():
+    return ["uranium", "aurum", "ferrum"]
+minerals = f()
+print(minerals[0])
+print(minerals[1])
+print(minerals[2])
 
 #2 example
 
-def my_function():
-  return ["apple", "banana", "cherry"]
+def sum(a, b):
+    return a + b
 
-fruits = my_function()
-print(fruits[0])
-print(fruits[1])
-print(fruits[2])
+result = sum(3, 5)
+print(result)  
 
 #3 example
 
-def my_function():
-  return (10, 20)
+def is_even(number):
+    return number % 2 == 0
 
-x, y = my_function()
-print("x:", x)
-print("y:", y)
+print(is_even(4))  
+print(is_even(7))  
 
-#4 example
+#4 exammple
 
-def my_function(a, b, /, *, c, d):
-  return a + b + c + d
+def avg(a, b, c):
+    return (a + b + c) / 3
 
-result = my_function(5, 10, c = 15, d = 20)
-print(result)
+print(avg(3, 6, 9)) 
