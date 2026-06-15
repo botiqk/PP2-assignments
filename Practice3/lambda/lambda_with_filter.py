@@ -15,3 +15,9 @@ print(*evens)
 words = ["cat", "apple", "hi", "banana"]
 long_words = list(filter(lambda x: len(x) > 3, words))
 print(long_words)  
+
+#4 example
+
+numbers = [-5, 3, 0, -2, 8]
+posnum = list(filter(lambda x: x > 0, numbers))
+print(posnum) 

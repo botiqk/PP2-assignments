@@ -1,8 +1,8 @@
 #1 example
 
-numbers = [1, 2, 3, 4, 5]
-doubled = list(map(lambda x: x * 2, numbers))
-print(doubled)
+numbers = [1, 2, 3, 4]
+result = list(map(lambda x: x * 2, numbers))
+print(result)  
 
 #2 example
 
@@ -21,4 +21,5 @@ print(upper_words)
 
 words = ["hi", "hello", "python"]
 lengths = list(map(lambda x: len(x), words))
-print(lengths)    
+print(lengths)  
+
