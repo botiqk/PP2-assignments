@@ -28,25 +28,35 @@ def show_all():
     cur = conn.cursor()
     
     cur.execute("""
-        SELECT c.name, c.email, c.birthday, g.name as group_name
-        FROM contacts c
-        LEFT JOIN groups g ON c.group_id = g.id
-    """)
+    SELECT
+        c.name,
+        c.email,
+        c.birthday,
+        g.name AS group_name,
+        p.phone,
+        p.type
+    FROM contacts c
+    LEFT JOIN groups g ON c.group_id = g.id
+    LEFT JOIN phones p ON c.id = p.contact_id
+""")
     
     rows = cur.fetchall()
     
-    print("\n" + "="*70)
-    print(f"{'Name':<20} {'Email':<25} {'Birthday':<12} {'Group':<10}")
-    print("="*70)
+    print("\n" + "=" * 100)
+    print(f"{'Name':<15} {'Email':<25} {'Birthday':<12} {'Group':<10} {'Phone':<15} {'Type':<10}")
+    print("=" * 100)
     
     for r in rows:
         name = r[0] or ""
         email = r[1] or ""
         birthday = str(r[2]) if r[2] else ""
         group = r[3] or ""
-        print(f"{name:<20} {email:<25} {birthday:<12} {group:<10}")
-    
-    print("="*70)
+        phone = r[4] or ""
+        phone_type = r[5] or ""
+
+        print(f"{name:<15} {email:<25} {birthday:<12} {group:<10} {phone:<15} {phone_type:<10}")
+
+    print("=" * 100)
     conn.close()
 
 #удаление
